@@ -14,7 +14,28 @@
         addEventListener se usa para registrar que se usara un manejador.
     </p>
     <p>
-        Cada evento tiene un tipo 
+        Cada evento tiene un tipo (keydown, focus y demas..) que lo identifica.
+        La mayoria de los eventos son llamados en un evento especifico del DOM
+        para despues propagarse a los ancestros de este elemento, permitiendo que
+        los manejadores asociados con estos elementos puedan manejar al primero.
+    </p>
+    <p>
+        Cuando un manejador de evento es llamado, se pasa un objeto de evento con 
+        informacion adicional sobre el mismo. Este objeto cuenta con metodos para 
+        parar la propagacion despues de si (stopPropagation) y para prevenir que el
+        navegador maneje el evento por defecto (preventDefault).
+    </p>
+    <p>
+        Presionar una tecla causa los eventos "keyup" y "keydown". Presionar el 
+        boton del mause causa los eventos "mousedown", "mouseup" y "click". Mover
+        el raton causa "mousemove". La interaccion touchscreen causa los eventos
+        "touchstart", "touchmove" y "touchend".
+    </p>
+    <p>
+        El scrollear se puede detectar con el evento "scroll" y los cambios de 
+        estado de enfoque se pueden detectar con los eventos "focus" y "blur". 
+        Cuando el documento se termina de cargar el evento "load" se dispara en
+        window.
     </p>
 </body>
 </html>
