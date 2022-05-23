@@ -9,6 +9,15 @@
 <body>
     <h1>Handling Events</h1>
     <p>
+        Para detectar eventos en el pasado se recurria a una operacion de 
+        consulta denominada polling que realizaba sondeos periodicos a los
+        elementos para revisar su estado. No hace falta decir que esto es 
+        ineficiente. En la actualidad la mayoria de los softwares son 
+        notificados por el sistema en el momento que ocurre un evento. Los
+        navegadores hacen esto al permitirnos registrar funciones como 
+        manejadores de eventos especificos.
+    </p>
+    <p>
         Los manejadores de evento o event handlers, hacen posible detectar y 
         reaccionar a eventos que pasan dentro de una pagina web. El metodo
         addEventListener se usa para registrar que se usara un manejador.
@@ -21,9 +30,11 @@
     </p>
     <p>
         Cuando un manejador de evento es llamado, se pasa un objeto de evento con 
-        informacion adicional sobre el mismo. Este objeto cuenta con metodos para 
-        parar la propagacion despues de si (stopPropagation) y para prevenir que el
-        navegador maneje el evento por defecto (preventDefault).
+        informacion adicional sobre el mismo. Informacion importante, ya que si se
+        presiona una tecla, te dice cual tecla se presiono y si se da un click, te 
+        especifica a que elemento y en que "coordenadas". Este objeto tambien cuenta
+        con metodos para parar la propagacion despues de si (stopPropagation) y para
+        prevenir que el navegador maneje el evento por defecto (preventDefault).
     </p>
     <p>
         Presionar una tecla causa los eventos "keyup" y "keydown". Presionar el 
@@ -36,6 +47,11 @@
         estado de enfoque se pueden detectar con los eventos "focus" y "blur". 
         Cuando el documento se termina de cargar el evento "load" se dispara en
         window.
+    </p>
+    <p>
+        Los manejadores de eventos del navegador se comportan como una notifiacion 
+        asincrona, son agendados cuando el evento ocurre, pero si hay otras 
+        funciones corriendo deben esperar a que estas acaben.
     </p>
 </body>
 </html>
