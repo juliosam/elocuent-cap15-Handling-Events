@@ -28,6 +28,7 @@
         para despues propagarse a los ancestros de este elemento, permitiendo que
         los manejadores asociados con estos elementos puedan manejar al primero.
     </p>
+    <p class="ballon">🎈</p>
     <p>
         Cuando un manejador de evento es llamado, se pasa un objeto de evento con 
         informacion adicional sobre el mismo. Informacion importante, ya que si se
@@ -42,6 +43,11 @@
         el raton causa "mousemove". La interaccion touchscreen causa los eventos
         "touchstart", "touchmove" y "touchend".
     </p>
+    <tab-panel >
+        <div data-tabname="one">Tab one</div>
+        <div data-tabname="two">Tab two</div>
+        <div data-tabname="three">Tab three</div>
+      </tab-panel>
     <p>
         El scrollear se puede detectar con el evento "scroll" y los cambios de 
         estado de enfoque se pueden detectar con los eventos "focus" y "blur". 
@@ -53,5 +59,38 @@
         asincrona, son agendados cuando el evento ocurre, pero si hay otras 
         funciones corriendo deben esperar a que estas acaben.
     </p>
+      
+    <p>.</p>
+
+    <style>
+        body{position: relative;}
+        .ballon { font-size: 4rem;}
+
+        .trail { 
+                 position: absolute;
+                 height: 6px; width: 6px;
+                 border-radius: 3px;
+                 background: teal;
+               }
+        /* tab-panel{
+            position: relative;
+            width: 250px;
+            height: 130px;
+            display: block;
+            
+        }
+        tab-panel div{
+            position: absolute;
+            background-color: aqua;
+            width: 250px;
+            height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        } */
+    
+    </style>
+    <script src="excercises-cap15.js"></script>
 </body>
 </html>
