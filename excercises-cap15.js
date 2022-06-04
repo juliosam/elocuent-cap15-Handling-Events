@@ -3,50 +3,44 @@ const ex2 = "Exercise 2"
 const ex3 = "Exercise 3"
 const br = " \n "
 
-console.log(ex1)
-
-const globo = document.querySelector('.ballon')
-
-const flate = (e) =>{ 
-   
+console.log(ex1);
+const globo = document.querySelector('.ballon');
+const flate = (e) =>{  
   let currentSize
   if(e.key==='ArrowUp'){
     e.preventDefault()
     const style = window.getComputedStyle(globo, null).getPropertyValue('font-size'); 
-    currentSize = parseFloat(style)
+    currentSize = parseFloat(style);
     if(currentSize < 130){
       globo.style.fontSize = (currentSize*1.1) + 'px';
-      console.log('inflate')
+      console.log('inflate');
     }
     else{
-      globo.innerHTML= '💥'
-      window.removeEventListener('keydown', flate)
-      console.log('kabom')
-      console.log(br)
-      console.log(ex2)
+      globo.innerHTML= '💥';
+      window.removeEventListener('keydown', flate);
+      console.log('kabom');
     }}
   if(e.key==='ArrowDown'){
-    e.preventDefault()
+    e.preventDefault();
     const style = window.getComputedStyle(globo, null).getPropertyValue('font-size'); 
-    const currentSize = parseFloat(style)
+    const currentSize = parseFloat(style);
     globo.style.fontSize = (currentSize*0.9) + 'px';
-    console.log('deflate')
+    console.log('deflate');
   }
 }
-
-window.addEventListener('keydown', flate)
+window.addEventListener('keydown', flate);
 
 ////--------------------Ejercicio 2---------------
 
 const trailer = (e) => {
-  console.log(e.screenY, e.screenX)
-  let dot = document.createElement('div')
-  document.body.appendChild(dot)
-  dot.classList.add('trail')
-  dot.style.top = (e.screenY) + 'px'
-  dot.style.left = (e.screenX) + 'px'
+  console.log(e.screenY, e.screenX);
+  let dot = document.createElement('div');
+  document.body.appendChild(dot);
+  dot.classList.add('trail');
+  dot.style.top = (e.screenY) + 'px';
+  dot.style.left = (e.screenX) + 'px';
 }
-document.addEventListener('mousemove', trailer)
+document.addEventListener('mousemove', trailer);
 
 /////------------------Ejercicio 3-----------------
 
