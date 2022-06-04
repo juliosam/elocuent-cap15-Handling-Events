@@ -1,96 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    <h1>Handling Events</h1>
-    <p>
-        Para detectar eventos en el pasado se recurria a una operacion de 
-        consulta denominada polling que realizaba sondeos periodicos a los
-        elementos para revisar su estado. No hace falta decir que esto es 
-        ineficiente. En la actualidad la mayoria de los softwares son 
-        notificados por el sistema en el momento que ocurre un evento. Los
-        navegadores hacen esto al permitirnos registrar funciones como 
-        manejadores de eventos especificos.
-    </p>
-    <p>
-        Los manejadores de evento o event handlers, hacen posible detectar y 
-        reaccionar a eventos que pasan dentro de una pagina web. El metodo
-        addEventListener se usa para registrar que se usara un manejador.
-    </p>
-    <p>
-        Cada evento tiene un tipo (keydown, focus y demas..) que lo identifica.
-        La mayoria de los eventos son llamados en un evento especifico del DOM
-        para despues propagarse a los ancestros de este elemento, permitiendo que
-        los manejadores asociados con estos elementos puedan manejar al primero.
-    </p>
-    <p class="ballon">🎈</p>
-    <p>
-        Cuando un manejador de evento es llamado, se pasa un objeto de evento con 
-        informacion adicional sobre el mismo. Informacion importante, ya que si se
-        presiona una tecla, te dice cual tecla se presiono y si se da un click, te 
-        especifica a que elemento y en que "coordenadas". Este objeto tambien cuenta
-        con metodos para parar la propagacion despues de si (stopPropagation) y para
-        prevenir que el navegador maneje el evento por defecto (preventDefault).
-    </p>
-    <p>
-        Presionar una tecla causa los eventos "keyup" y "keydown". Presionar el 
-        boton del mause causa los eventos "mousedown", "mouseup" y "click". Mover
-        el raton causa "mousemove". La interaccion touchscreen causa los eventos
-        "touchstart", "touchmove" y "touchend".
-    </p>
-    <tab-panel >
-        <div data-tabname="one">Tab one</div>
-        <div data-tabname="two">Tab two</div>
-        <div data-tabname="three">Tab three</div>
-      </tab-panel>
-    <p>
-        El scrollear se puede detectar con el evento "scroll" y los cambios de 
-        estado de enfoque se pueden detectar con los eventos "focus" y "blur". 
-        Cuando el documento se termina de cargar el evento "load" se dispara en
-        window.
-    </p>
-    <p>
-        Los manejadores de eventos del navegador se comportan como una notifiacion 
-        asincrona, son agendados cuando el evento ocurre, pero si hay otras 
-        funciones corriendo deben esperar a que estas acaben.
-    </p>
-      
-    <p>.</p>
-
-    <style>
-        body{position: relative;}
-        .ballon { font-size: 4rem;}
-
-        .trail { 
-                 position: absolute;
-                 height: 6px; width: 6px;
-                 border-radius: 3px;
-                 background: teal;
-               }
-        /* tab-panel{
-            position: relative;
-            width: 250px;
-            height: 130px;
-            display: block;
-            
-        }
-        tab-panel div{
-            position: absolute;
-            background-color: aqua;
-            width: 250px;
-            height: 130px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-        } */
-    
-    </style>
-    <script src="excercises-cap15.js"></script>
+  <h1>Handling Events</h1>
+  <p>
+    Para detectar eventos en el pasado se recurria a una operacion de 
+    consulta denominada polling que realizaba sondeos periodicos a los
+    elementos para revisar su estado. No hace falta decir que esto es 
+    ineficiente. En la actualidad la mayoria de los softwares son 
+    notificados por el sistema en el momento que ocurre un evento. Los
+    navegadores hacen esto al permitirnos registrar funciones como 
+    manejadores de eventos especificos.
+  </p>
+  <p>
+    Los manejadores de evento o event handlers, hacen posible detectar y 
+    reaccionar a eventos que pasan dentro de una pagina web. El metodo
+    addEventListener se usa para registrar que se usara un manejador.
+  </p>
+  <p>
+    Cada evento tiene un tipo (keydown, focus y demas..) que lo identifica.
+    La mayoria de los eventos son llamados en un evento especifico del DOM
+    para despues propagarse a los ancestros de este elemento, permitiendo que
+    los manejadores asociados con estos elementos puedan manejar al primero.
+  </p>
+  <p class="ballon">🎈</p>
+  <p>
+    Cuando un manejador de evento es llamado, se pasa un objeto de evento con 
+    informacion adicional sobre el mismo. Informacion importante, ya que si se
+    presiona una tecla, te dice cual tecla se presiono y si se da un click, te 
+    especifica a que elemento y en que "coordenadas". Este objeto tambien cuenta
+    con metodos para parar la propagacion despues de si (stopPropagation) y para
+    prevenir que el navegador maneje el evento por defecto (preventDefault).
+  </p>
+  <p>
+    Presionar una tecla causa los eventos "keyup" y "keydown". Presionar el 
+    boton del mause causa los eventos "mousedown", "mouseup" y "click". Mover
+    el raton causa "mousemove". La interaccion touchscreen causa los eventos
+    "touchstart", "touchmove" y "touchend".
+  </p>
+  <tab-panel >
+    <div data-tabname="one">Tab one</div>
+    <div data-tabname="two">Tab two</div>
+    <div data-tabname="three">Tab three</div>
+  </tab-panel>
+  <p>
+    El scrollear se puede detectar con el evento "scroll" y los cambios de 
+    estado de enfoque se pueden detectar con los eventos "focus" y "blur". 
+    Cuando el documento se termina de cargar el evento "load" se dispara en
+    window.
+  </p>
+  <p>
+    Los manejadores de eventos del navegador se comportan como una notifiacion 
+    asincrona, son agendados cuando el evento ocurre, pero si hay otras 
+    funciones corriendo deben esperar a que estas acaben.
+  </p>
+<style>
+  body{position: relative;}
+  .ballon { font-size: 4rem;}
+  .trail { 
+  position: absolute;
+  height: 6px; width: 6px;
+  border-radius: 3px;
+  background: teal;
+  }
+</style>
+  <script src="excercises-cap15.js"></script>
 </body>
 </html>
